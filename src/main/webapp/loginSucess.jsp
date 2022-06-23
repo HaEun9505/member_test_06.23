@@ -14,12 +14,14 @@
 	%>
 	<%= name %>님 환영합니다.<br>
 	아이디 [<%= id %>]로 로그인 하셨습니다.<br><br>
-	<a href="logout.jsp">로그아웃</a>
+	<a href="logout.jsp">로그아웃</a>&nbsp;&nbsp;&nbsp;
+	<a href="modify.jsp">회원정보수정</a>
 	<br><br>
 	<hr>
 	<form action="deleteOk.jsp">
 		아이디 : <input type="text" name="userId" value="<%= id %>" readonly>
 		<!-- readonly : 읽기 전용 -->
 		<input type="submit" value="회원탈퇴">
+	</form>
 </body>
 </html>
