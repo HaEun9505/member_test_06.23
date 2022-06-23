@@ -12,7 +12,7 @@
 	<%
 		request.setCharacterEncoding("utf-8");//한글깨짐 방지
 		
-		String id = request.getParameter("userId");
+		String id = request.getParameter("userId");//입력한 데이터 읽어오기
 		
 		String sql = "DELETE FROM testmember WHERE id= '" + id + "'";				
 		
