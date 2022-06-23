@@ -8,6 +8,7 @@
 </head>
 <body>
 	<%
+		//세션에서 값 불러오기
 		String id = (String)session.getAttribute("id");
 		String pw = (String)session.getAttribute("pw");
 		String name = (String)session.getAttribute("name");

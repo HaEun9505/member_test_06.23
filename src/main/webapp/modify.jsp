@@ -17,10 +17,9 @@
 		String phone=null;
 	 	String gender=null;
  		
-	 	//파라미터 값 넘겨받은게 아니라, 하이퍼링크 통해서
 		request.setCharacterEncoding("utf-8");//한글깨짐 방지
 		
-		//세션 값 가져오기
+		//세션에서 id 값 불러오기
 		String mid = (String)session.getAttribute("id");
 		
 		//data source 설정
