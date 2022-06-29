@@ -12,6 +12,7 @@
 	<%
 		request.setCharacterEncoding("utf-8");//한글깨짐 방지
 		
+		//getParameter(form의"name");
 		String mid = request.getParameter("memberId");
 		String mpw = request.getParameter("memberPw");
 		String mname = request.getParameter("memberName");

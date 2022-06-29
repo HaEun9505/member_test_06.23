@@ -28,25 +28,26 @@
 		String password = "12345";
 		
 		Connection conn=null;	//Connection 객체 생성
-		Statement stmt=null;	//sql을 실행해주는 Statement 객체 생성
+		Statement stmt=null;	
 		ResultSet rs = null;	//ResultSet 객체 생성
 		
-		String sql = "SELECT * FROM testmember WHERE id = '" + mid + "' AND Pw = '" + mpw + "'";
+		String sql = "SELECT * FROM testmember WHERE id = '" + mid + "' AND pw = '" + mpw + "'";
 		
 		try{
+			
 			Class.forName(driverName);	//드라이버 로딩
 			//데이터베이스 연동
 			conn = DriverManager.getConnection(url, username, password);
-			//sql 실행
+			//sql을 실행해주는 statement 객체 생성
 			stmt = conn.createStatement();
-			rs = stmt.executeQuery(sql);	//SELECT
+			rs = stmt.executeQuery(sql);	//SELECT(rs를 통해 결과값을 리턴)
 			
 			//System.out.println("rs:" + rs);
 			
 			//로그인 했는지 체크
 			int loginFlag = 0;
 			
-			while(rs.next()){	//next : 처음 위치 필드명에서 다음 포지션으로 이동(없으면 false)
+			while(rs.next()){	//next : 처음 위치 필드명에서 다음 포지션(레코드)으로 이동(없으면 false)
 			 	id = rs.getString("id");
 			 	pw = rs.getString("pw");
 			 	email = rs.getString("email");
@@ -61,7 +62,7 @@
 				loginFlag++;
 			}
 			if(loginFlag == 0){	//값이 없으면
-				response.sendRedirect("login.jsp");	//로그인 페이지로 이동
+				response.sendRedirect("login.jsp");	//다시 로그인 페이지로 이동
 			}else{
 				response.sendRedirect("loginSucess.jsp");	
 			}

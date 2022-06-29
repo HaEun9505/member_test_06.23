@@ -9,7 +9,7 @@
 <title>회원 가입 완료</title>
 </head>
 <body>
-	<%
+	<%	
 		request.setCharacterEncoding("utf-8");//한글깨짐 방지
 		
 		String mid = request.getParameter("memberId");
@@ -47,9 +47,11 @@
 			//SQL 실행 -> 1이 반환되면 성공, 아니면 실패
 			int resultCheck = stmt.executeUpdate(sql);
 			
-			if(resultCheck == 1){
-				response.sendRedirect("joinSucess.jsp");
+			if(resultCheck == 1){	//1이 반환되면
+				//회원가입 성공 -> joinSucess 페이지로 이동
+				response.sendRedirect("joinSucess.jsp");	
 			}else{
+				//실패 -> join 페이지로 이동
 				response.sendRedirect("join.jsp");
 			}
 			
