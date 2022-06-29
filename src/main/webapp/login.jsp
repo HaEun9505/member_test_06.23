@@ -7,6 +7,8 @@
 <title>회원 로그인</title>
 </head>
 <body>
+	<h2>회원 로그인</h2>
+	<hr>
 	<form action="loginOk.jsp">
 		아이디 : <input type="text" name="userId"><br><br>
 		비밀번호 : <input type="password" name="userPw"><br><br>
